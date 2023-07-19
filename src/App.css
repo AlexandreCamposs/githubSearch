@@ -1,42 +1,68 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+main {
+  background: linear-gradient(
+    90deg,
+    hsla(175, 79%, 63%, 1) 0%,
+    hsla(82, 96%, 57%, 1) 100%
+  );
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  margin: 0 auto;
+  max-width: 600px;
+  /* border: 2px solid black; */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.description {
+  display: block;
+  padding: 2rem;
+  width: 100%;
+  /* border: 1px solid red; */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.description h1 {
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.description p {
+  font-size: 1.2rem;
 }
 
-.card {
-  padding: 2em;
+.search {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-.read-the-docs {
-  color: #888;
+.search input {
+  width: 80%;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  text-align: center;
+  border: none;
+}
+
+.search button {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: none;
+  background-color: #dbf73b;
+}
+
+.search button svg {
+  margin-left: 0.5rem;
 }
