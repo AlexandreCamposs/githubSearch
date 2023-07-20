@@ -1,15 +1,25 @@
-import { AiOutlineUser } from 'react-icons/ai';
+import { AiOutlineUser, AiFillCloseCircle } from 'react-icons/ai';
 import { ImGithub } from 'react-icons/im';
-import { RiGitRepositoryLine } from 'react-icons/ri';
-import { RiUserFollowLine } from 'react-icons/ri';
-import { BiTimeFive } from 'react-icons/bi';
-import { AiFillCloseCircle } from 'react-icons/ai';
-import { RiUserFollowFill } from 'react-icons/ri';
+import {
+  RiGitRepositoryLine,
+  RiUserFollowLine,
+  RiUserFollowFill,
+} from 'react-icons/ri';
 
-import { FormatDate } from '../utils/FormatDate';
+import { BiTimeFive } from 'react-icons/bi';
+
 import './Modal.css';
 
 const Modal = ({ user, closeModal }) => {
+  const FormatDate = (data) => {
+    const date = new Date(data);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+
+    return `${day}/${month}/${year}`;
+  };
+
   return (
     <div className="modal-container">
       <div className="modal">
