@@ -3,7 +3,7 @@ import { FaHandPeace, FaSearch } from 'react-icons/fa';
 import { GrGithub } from 'react-icons/gr';
 import './App.css';
 
-import Modal from './components/modal';
+import Modal from './components/Modal';
 
 function App() {
   const [name, setName] = useState([]);
@@ -22,7 +22,9 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    UrlGit();
+    if (name !== '') {
+      UrlGit();
+    }
     setName('');
   };
 

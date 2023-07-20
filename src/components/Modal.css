@@ -55,3 +55,15 @@
 .user p svg {
   margin-right: 1rem;
 }
+
+@media screen and (max-width: 600px) {
+  .modal {
+    margin: 4rem 2rem;
+  }
+  .user h1 {
+    font-size: 2rem;
+  }
+  .user h2 {
+    font-size: 1.5rem;
+  }
+}
