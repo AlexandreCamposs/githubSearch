@@ -6,7 +6,7 @@ import { BiTimeFive } from 'react-icons/bi';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { RiUserFollowFill } from 'react-icons/ri';
 
-import { FormatDate } from '../utils/formatDate';
+import { FormatDate } from '../utils/FormatDate';
 import './Modal.css';
 
 const Modal = ({ user, closeModal }) => {
