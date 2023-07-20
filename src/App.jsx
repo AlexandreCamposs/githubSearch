@@ -3,10 +3,10 @@ import { FaHandPeace, FaSearch } from 'react-icons/fa';
 import { GrGithub } from 'react-icons/gr';
 import './App.css';
 
-import Modal from './components/Modal';
+import Modal from './components/Modall';
 
 function App() {
-  const [name, setName] = useState([]);
+  const [name, setName] = useState('');
   const [user, setUser] = useState(null);
   const [showModal, setShowModal] = useState(false);
 

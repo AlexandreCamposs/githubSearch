@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
 import { ImGithub } from 'react-icons/im';
 import { RiGitRepositoryLine } from 'react-icons/ri';
