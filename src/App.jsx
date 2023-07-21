@@ -9,6 +9,7 @@ function App() {
   const [name, setName] = useState('');
   const [user, setUser] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [errorSearch, setErrorSearch] = useState(false);
 
   async function UrlGit() {
     const response = await fetch(`https://api.github.com/users/${name}`);
@@ -24,6 +25,9 @@ function App() {
 
     if (name !== '') {
       UrlGit();
+      setErrorSearch(false);
+    } else {
+      setErrorSearch(true);
     }
     setName('');
   };
@@ -55,7 +59,7 @@ function App() {
             Search <FaSearch />
           </button>
         </form>
-        {!showModal && (
+        {errorSearch && (
           <div className="invalid">
             <h2>Preencha o campo acima!</h2>
           </div>

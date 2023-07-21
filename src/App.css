@@ -68,6 +68,7 @@ main {
 }
 
 .invalid {
+  width: 80%;
   background-color: #fff;
   padding: 0.5rem 2rem;
   margin-top: 0.5rem;
@@ -77,6 +78,9 @@ main {
 }
 @media screen and (max-width: 600px) {
   .search input {
+    font-size: 1rem;
+  }
+  .invalid h2 {
     font-size: 1rem;
   }
 }
