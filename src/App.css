@@ -66,6 +66,15 @@ main {
 .search button svg {
   margin-left: 0.5rem;
 }
+
+.invalid {
+  background-color: #fff;
+  padding: 0.5rem 2rem;
+  margin-top: 0.5rem;
+  border-radius: 10px;
+  color: red;
+  border: 1px solid red;
+}
 @media screen and (max-width: 600px) {
   .search input {
     font-size: 1rem;

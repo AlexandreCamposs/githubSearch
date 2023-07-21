@@ -40,17 +40,17 @@ const Modal = ({ user, closeModal }) => {
             </p>
             <p>
               <RiGitRepositoryLine />
-              {user.public_repos}
-              Public Repos
+              Public Repos:
+              <span>{user.public_repos}</span>
             </p>
             <p>
               <RiUserFollowLine />
               Followers:
-              {user.followers}
+              <span>{user.followers}</span>
             </p>
             <p>
               <RiUserFollowFill />
-              {user.following}
+              Following: <span>{user.following}</span>
             </p>
             <p>
               <BiTimeFive />

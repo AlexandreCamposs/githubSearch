@@ -55,6 +55,11 @@ function App() {
             Search <FaSearch />
           </button>
         </form>
+        {!showModal && (
+          <div className="invalid">
+            <h2>Preencha o campo acima!</h2>
+          </div>
+        )}
       </div>
       {showModal && <Modal user={user} closeModal={closeModal} />}
     </main>
