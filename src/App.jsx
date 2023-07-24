@@ -10,14 +10,21 @@ function App() {
   const [user, setUser] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [errorSearch, setErrorSearch] = useState(false);
+  const [errorApi, setErrorApi] = useState(null);
 
   async function UrlGit() {
-    const response = await fetch(`https://api.github.com/users/${name}`);
-    console.log(response);
-    const data = await response.json();
-    setUser(data);
-    console.log(data);
-    setShowModal(true);
+    try {
+      const response = await fetch(`https://api.github.com/users/${name}`);
+
+      if (response.status !== 200) {
+        throw new Error('Usuário não encontrado');
+      }
+      const data = await response.json();
+      setUser(data);
+      setShowModal(true);
+    } catch (error) {
+      setErrorApi(error.message);
+    }
   }
 
   const handleSubmit = (e) => {
@@ -59,13 +66,20 @@ function App() {
             Search <FaSearch />
           </button>
         </form>
-        {errorSearch && (
+        {errorApi && !errorSearch && (
+          <div className="invalid">
+            <h2>Usuário não encontrado</h2>
+          </div>
+        )}
+        {errorSearch && !errorApi && (
           <div className="invalid">
             <h2>Preencha o campo acima!</h2>
           </div>
         )}
       </div>
-      {showModal && <Modal user={user} closeModal={closeModal} />}
+      {showModal && !errorApi && !errorSearch && (
+        <Modal user={user} closeModal={closeModal} />
+      )}
     </main>
   );
 }
